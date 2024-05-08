@@ -1,44 +1,33 @@
 // src/pages/UsersPage.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "./index.scss"
+import React, { useState, useEffect } from 'react';
+import { getAllUsers } from '../../api/users'; // Import the API function
+import "./index.scss";
 
 const Users = () => {
-    // Example user data (replace this with dynamic data fetching if needed)
-    const users = [
-        {
-            id: 1,
-            name: "John Doe",
-            email: "john@example.com",
-            username: "johndoe",
-            avatar: "/static/user_avatar.png"
-        },
-        {
-            id: 2,
-            name: "Jane Smith",
-            email: "jane@example.com",
-            username: "janesmith",
-            avatar: "/static/user_avatar.png"
-        }
-    ];
+    const [users, setUsers] = useState([]); // State to store users
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const data = await getAllUsers(); // Fetch users from the backend
+                setUsers(data.users); // Update state with fetched users
+            } catch (error) {
+                console.error("Failed to fetch users:", error);
+            }
+        };
+
+        fetchUsers();
+    }, []); // Empty dependency array to run only once after the component mounts
 
     return (
         <div className="users-container">
-            <h1>Playlist</h1>
-            <img className="logo-image" src="../../../public/logo.jpg" alt="My logo" />
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                </ul>
-            </nav>
             <div className="container_for_users">
                 <h2>All Users</h2>
                 <ul className="user-list">
                     {users.map((user) => (
                         <li key={user.id} className="user">
                             <div className="user-details">
-                                <img src={user.avatar} alt={user.name} />
+                                <img src={"public/user_avatar.png"} alt={user.name} />
                                 <div className="info">
                                     <h3>{user.name}</h3>
                                     <p>Email: {user.email}</p>
