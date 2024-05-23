@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./Login.scss"
+import "./register.scss"
 
-const Login = () => {
+const Redister = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (event) => {
+    const handle = (event) => {
         event.preventDefault();
 
-        if (username && password) {
+        if (username && password && email) {
             // Save the username to localStorage (or any other persistent storage)
             localStorage.setItem('loggedInUser', username);
             localStorage.setItem('loggedInEmail', email);
@@ -22,14 +22,10 @@ const Login = () => {
         }
     };
 
-    const handleRegister = () => {
-        navigate('/register');
-    };
-
     return (
-        <div className="login-container">
-            <h2>Login to Your Account</h2>
-            <form onSubmit={handleLogin}>
+        <div className="redister-container">
+            <h2>Register to Your Account</h2>
+            <form onSubmit={handle}>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
                     <input
@@ -63,11 +59,10 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
-                <button type="button" onClick={handleRegister}>Register</button>
+                <button type="submit">Redister</button>
             </form>
         </div>
     );
 };
 
-export default Login;
+export default Redister;

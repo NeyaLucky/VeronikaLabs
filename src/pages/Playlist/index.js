@@ -10,7 +10,7 @@ const Playlist = () => {
             artist: "John Doe",
             genre: "Pop",
             duration: "8:45",
-            cover: "/static/my_dear_friends.jpg"
+            cover: "/my_dear_friends.jpg"
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ const Playlist = () => {
             artist: "Jane Smith",
             genre: "Rock",
             duration: "12:34",
-            cover: "/static/You love me.jpg"
+            cover: "/You love me.jpg"
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ const Playlist = () => {
             artist: "Alex Johnson",
             genre: "Jazz",
             duration: "10:22",
-            cover: "/static/doogbay.jpg"
+            cover: "/doogbay.jpg"
         }
     ];
 
@@ -51,7 +51,7 @@ const Playlist = () => {
                                 </div>
                                 <div className="side-panel">
                                     <span className="time-display">{song.duration}</span>
-                                    <button className="control-button">Stop</button>
+                                    <button className="control_button">Stop</button>
                                 </div>
                             </div>
                         </li>

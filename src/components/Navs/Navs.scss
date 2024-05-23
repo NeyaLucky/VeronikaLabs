@@ -1,8 +1,22 @@
 .navs {
   display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 24px;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   background: white;
+
+  &-links{
+    display: flex;
+    gap: 12px;
+  }
+}
+
+.logo-image {
+  margin-left: 24px;
+  width: 50px;
+  height: 50px;
 }

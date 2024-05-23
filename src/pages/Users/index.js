@@ -27,7 +27,7 @@ const Users = () => {
                     {users.map((user) => (
                         <li key={user.id} className="user">
                             <div className="user-details">
-                                <img src={"public/user_avatar.png"} alt={user.name} />
+                                <img src={"/user_avatar.png"} alt={user.name} />
                                 <div className="info">
                                     <h3>{user.name}</h3>
                                     <p>Email: {user.email}</p>

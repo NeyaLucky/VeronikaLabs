@@ -19,27 +19,28 @@ body {
   font-size: 24px;
   color: #333;
 }
-.history-container .song-list {
+.song-list {
   list-style: none;
   padding: 0;
 }
-.history-container .song-list .song {
+.song {
   padding: 20px;
   display: flex;
   align-items: center;
+  padding-right: 16px;
   width: 100%;
 }
-.history-container .song-list .song:last-child {
+.song:last-child {
   width: 100%;
 }
-.history-container .song-list .song .song-details {
+.song-details {
   display: flex;
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #ccc;
   justify-content: space-between;
 }
-.history-container .song-list .song .song-details img {
+.song-details img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -66,7 +67,7 @@ body {
   font-size: 15px;
   margin-bottom: 5px;
 }
-.history-container .song-list .song .song-details .control_button {
+.control_button {
   padding: 5px 10px;
   font-size: 12px;
   background-color: rgb(102, 174, 133);
@@ -74,7 +75,9 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 12px;
+  margin-right: 12px;
 }
-.history-container .song-list .song .song-details .control_button:hover {
+.control_button:hover {
   background-color: rgb(102, 174, 133);
 }
